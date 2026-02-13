@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Daddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="bg">
+    <div class="stars"></div>
+    <div class="grain"></div>
+  </div>
+
+  <main class="ui" aria-live="polite">
+    <section class="card is-active" data-step="1">
+      <p class="kicker">a little note</p>
+      <h1 class="title">hi daddy,<br>i have to say something.</h1>
+      <button class="btn" data-next>
+        <span>Get Started</span><i>→</i>
+      </button>
+    </section>
+
+    <section class="card" data-step="2">
+      <p class="kicker">just one more…</p>
+      <h1 class="title big">i love you daddy</h1>
+      <button class="btn" data-next>
+        <span>Open</span><i>→</i>
+      </button>
+    </section>
+
+    <section class="card" data-step="3">
+      <p class="kicker">for you</p>
+      <h1 class="title type" id="typed"></h1>
+
+      <div class="row">
+        <button class="btn ghost" data-replay><span>Replay</span></button>
+        <button class="btn" data-bouquet><span>Show bouquet</span><i>✦</i></button>
+      </div>
+    </section>
+  </main>
+
+  <section class="stage" aria-hidden="true">
+    <div class="glowText" id="topText">I LOVE YOU</div>
+
+    <!-- Original SVG bouquet (custom made) -->
+    <svg class="bouquet" viewBox="0 0 420 520" role="img" aria-label="Black and white bouquet">
+      <!-- wrapper -->
+      <path class="wrap" d="M95 500 C150 430, 270 430, 325 500 L210 515 Z"/>
+
+      <!-- stems -->
+      <path class="stem s1" d="M210 455 C190 400, 160 345, 150 300 C140 255, 160 225, 170 205" />
+      <path class="stem s2" d="M210 455 C220 395, 250 335, 265 295 C280 255, 270 225, 260 205" />
+      <path class="stem s3" d="M210 455 C210 385, 210 340, 210 285 C210 235, 220 210, 215 185" />
+      <path class="stem s4" d="M210 455 C175 410, 130 360, 115 320 C100 280, 115 250, 125 230" />
+      <path class="stem s5" d="M210 455 C245 410, 290 360, 305 320 C320 280, 305 250, 295 230" />
+
+      <!-- leaves -->
+      <path class="leaf l1" d="M170 320 C145 320, 140 350, 165 360 C185 368, 195 350, 170 320 Z"/>
+      <path class="leaf l2" d="M255 320 C280 320, 285 350, 260 360 C240 368, 230 350, 255 320 Z"/>
+      <path class="leaf l3" d="M130 285 C105 290, 105 320, 130 325 C155 330, 160 300, 130 285 Z"/>
+      <path class="leaf l4" d="M290 285 C315 290, 315 320, 290 325 C265 330, 260 300, 290 285 Z"/>
+
+      <!-- blooms -->
+      <g class="bloom b1" transform="translate(165 185)">
+        <circle class="core" cx="0" cy="0" r="6"/>
+        <path class="petal" d="M0 -22 C10 -18 12 -6 0 -4 C-12 -6 -10 -18 0 -22 Z"/>
+        <path class="petal" d="M22 0 C18 10 6 12 4 0 C6 -12 18 -10 22 0 Z"/>
+        <path class="petal" d="M0 22 C-10 18 -12 6 0 4 C12 6 10 18 0 22 Z"/>
+        <path class="petal" d="M-22 0 C-18 -10 -6 -12 -4 0 C-6 12 -18 10 -22 0 Z"/>
+      </g>
+
+      <g class="bloom b2" transform="translate(260 205)">
+        <circle class="core" cx="0" cy="0" r="6"/>
+        <path class="petal" d="M0 -20 C9 -16 12 -6 0 -4 C-12 -6 -9 -16 0 -20 Z"/>
+        <path class="petal" d="M20 0 C16 9 6 12 4 0 C6 -12 16 -9 20 0 Z"/>
+        <path class="petal" d="M0 20 C-9 16 -12 6 0 4 C12 6 9 16 0 20 Z"/>
+        <path class="petal" d="M-20 0 C-16 -9 -6 -12 -4 0 C-6 12 -16 9 -20 0 Z"/>
+      </g>
+
+      <g class="bloom b3" transform="translate(215 175)">
+        <circle class="core" cx="0" cy="0" r="7"/>
+        <path class="petal" d="M0 -26 C12 -20 14 -6 0 -4 C-14 -6 -12 -20 0 -26 Z"/>
+        <path class="petal" d="M26 0 C20 12 6 14 4 0 C6 -14 20 -12 26 0 Z"/>
+        <path class="petal" d="M0 26 C-12 20 -14 6 0 4 C14 6 12 20 0 26 Z"/>
+        <path class="petal" d="M-26 0 C-20 -12 -6 -14 -4 0 C-6 14 -20 12 -26 0 Z"/>
+      </g>
+
+      <g class="bloom b4" transform="translate(125 225)">
+        <circle class="core" cx="0" cy="0" r="5.5"/>
+        <path class="petal" d="M0 -18 C8 -14 10 -6 0 -4 C-10 -6 -8 -14 0 -18 Z"/>
+        <path class="petal" d="M18 0 C14 8 6 10 4 0 C6 -10 14 -8 18 0 Z"/>
+        <path class="petal" d="M0 18 C-8 14 -10 6 0 4 C10 6 8 14 0 18 Z"/>
+        <path class="petal" d="M-18 0 C-14 -8 -6 -10 -4 0 C-6 10 -14 8 -18 0 Z"/>
+      </g>
+
+      <g class="bloom b5" transform="translate(295 230)">
+        <circle class="core" cx="0" cy="0" r="5.5"/>
+        <path class="petal" d="M0 -18 C8 -14 10 -6 0 -4 C-10 -6 -8 -14 0 -18 Z"/>
+        <path class="petal" d="M18 0 C14 8 6 10 4 0 C6 -10 14 -8 18 0 Z"/>
+        <path class="petal" d="M0 18 C-8 14 -10 6 0 4 C10 6 8 14 0 18 Z"/>
+        <path class="petal" d="M-18 0 C-14 -8 -6 -10 -4 0 C-6 10 -14 8 -18 0 Z"/>
+      </g>
+    </svg>
+
+    <div class="hint">made with love</div>
+  </section>
+</body>
+</html>
